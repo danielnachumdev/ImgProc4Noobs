@@ -11,7 +11,7 @@ class DCT(CompressionStrategy):
     """
 
     @staticmethod
-    def decode(generator: Generator[Code, None, None]) -> SerializationStr:
+    def decode(g: Generator[Code, None, None]) -> SerializationStr:
         pass
 
     @staticmethod

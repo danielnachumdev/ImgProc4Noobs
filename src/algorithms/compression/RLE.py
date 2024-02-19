@@ -10,9 +10,9 @@ class RLE(CompressionStrategy):
     """
 
     @staticmethod
-    def decode(generator: Generator[Code, None, None]) -> SerializationStr:
+    def decode(g: Generator[Code, None, None]) -> SerializationStr:
         res = ""
-        for c, amount in generator:
+        for c, amount in g:
             res += c * amount
         return res
 

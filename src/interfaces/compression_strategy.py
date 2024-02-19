@@ -14,7 +14,7 @@ class CompressionStrategy(ABC):
 
     @staticmethod
     @abstractmethod
-    def decode(generator: Generator[Code, None, None]) -> SerializationStr:
+    def decode(g: Generator[Code, None, None]) -> SerializationStr:
         pass
 
 

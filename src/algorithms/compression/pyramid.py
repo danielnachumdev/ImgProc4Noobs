@@ -6,7 +6,7 @@ from interfaces.compression_strategy import CompressionStrategy, Code
 
 class PyramidCompression(CompressionStrategy):
     @staticmethod
-    def decode(generator: Generator[Code, None, None]) -> SerializationStr:
+    def decode(g: Generator[Code, None, None]) -> SerializationStr:
         pass
 
     @staticmethod
