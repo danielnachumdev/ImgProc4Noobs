@@ -4,30 +4,21 @@ from interfaces.serializable import Serializable, SerializationStr
 from interfaces.compression_strategy import CompressionStrategy, Code
 
 
-class RLE(CompressionStrategy):
+class DCT(CompressionStrategy):
     """
-    Run Length Encoding
+    Transform Compression  - JPEG
+    Discrete Cosine Transform
     """
 
     @staticmethod
     def decode(generator: Generator[Code, None, None]) -> SerializationStr:
-        res = ""
-        for c, amount in generator:
-            res += c * amount
-        return res
+        pass
 
     @staticmethod
     def encode(obj: Serializable) -> Generator[Code, None, None]:
-        s = obj.serialize()
-        i = 0
-        while i < len(s):
-            j = 1
-            while i + j < len(s) and s[i + j] == s[i]:
-                j += 1
-            yield (s[i], j)
-            i += j
+        pass
 
 
 __all__ = [
-    "RLE"
+    "DCT"
 ]

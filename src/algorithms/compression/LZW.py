@@ -1,10 +1,10 @@
 from typing import Generator
 
-from utils.serializable import Serializable, SerializationStr
-from .compression_algorithm import CompressionAlgorithm, Code
+from interfaces.serializable import Serializable, SerializationStr
+from interfaces.compression_strategy import CompressionStrategy, Code
 
 
-class LZW(CompressionAlgorithm):
+class LZW(CompressionStrategy):
     """
     Lempel-Ziv compression algorithm
     """

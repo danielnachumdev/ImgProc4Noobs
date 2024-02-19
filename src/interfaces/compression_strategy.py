@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 from typing import Generator, TypeVar
-from src.utils.serializable import Serializable, SerializationStr
+from interfaces.serializable import Serializable, SerializationStr
 
 Code = TypeVar("Code")
 
 
-class CompressionAlgorithm(ABC):
+class CompressionStrategy(ABC):
 
     @staticmethod
     @abstractmethod
@@ -20,5 +20,5 @@ class CompressionAlgorithm(ABC):
 
 __all__ = [
     "Code",
-    "CompressionAlgorithm"
+    "CompressionStrategy",
 ]

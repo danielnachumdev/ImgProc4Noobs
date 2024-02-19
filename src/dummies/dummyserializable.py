@@ -1,13 +1,13 @@
-from src import *
+from interfaces.serializable import Serializable, SerializationStr
 
 
-class Dummy(Serializable):
+class DummySerializable(Serializable):
     def __init__(self, s: str):
         self.s = s
 
     @staticmethod
     def deserialize(serialized: SerializationStr) -> "Serializable":
-        return Dummy(serialized)
+        return DummySerializable(serialized)
 
     def serialize(self) -> SerializationStr:
         return self.s
@@ -15,10 +15,10 @@ class Dummy(Serializable):
     def __str__(self):
         return f"{self.__class__.__qualname__}(s={self.s})"
 
+    def __eq__(self, other: "DummySerializable") -> bool:
+        return self.s == other.s
 
-def main() -> None:
-    print(Dummy.deserialize(LZW.decode(LZW.encode(Dummy("babaabaaa")))))
-    print()
 
-if __name__ == "__main__":
-    main()
+__all__ = [
+    "DummySerializable"
+]
